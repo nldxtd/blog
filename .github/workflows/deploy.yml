@@ -3,8 +3,6 @@ name: deploy
 on:
     push:
     workflow_dispatch:
-    schedule:
-        # Runs everyday at 8:00 AM
         - cron: "0 0 * * *"
 
 jobs:
@@ -20,7 +18,7 @@ jobs:
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: "latest"
+                  hugo-version: "0.89.0"
 
             - name: Build Web
               run: hugo
